@@ -12,3 +12,6 @@ Added Uc5 Updated reset button and submit button to clear the input field when t
 Added UC6 Given user input values are converted to string value.
 
 Added Uc7 To store the user input values to local storage.
+
+
+Added Uc8 navigate to homepage.
