@@ -10,3 +10,5 @@ Added UC3-UC4 added two javascript files to accept the values from user and do v
 Added Uc5 Updated reset button and submit button to clear the input field when they are clicked.
 
 Added UC6 Given user input values are converted to string value.
+
+Added Uc7 To store the user input values to local storage.
