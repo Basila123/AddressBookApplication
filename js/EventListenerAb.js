@@ -92,3 +92,12 @@ const createAndUpdateStorage = (addressBookData) => {
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
 }
+    const setTextValue = (id,value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+    }
+
+    const setValue = (id,value) => {
+        const element = document.querySelector(id);
+        element.value = value;
+    }
