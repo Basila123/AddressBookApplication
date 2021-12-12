@@ -6,12 +6,15 @@
 body {
   margin: 0;
   height: 100%;
-  background-color: #ffffff;
+  background-color:white;
+  width: 600;
 }
 
 .header {
   padding: 15px 0px;
   background-color: #ffffff;
+  width:100%;
+  padding-bottom: 10px;
 }
 
 .header-content {
@@ -19,6 +22,7 @@ body {
   flex-direction: row;
   justify-content: center;
   border: 0px solid rgb(1, 192, 250);
+  width: min-content;
 }
 
 .logo-content {
@@ -30,12 +34,13 @@ body {
 
 .logo-content img {
   margin-right: 0.5%;
-  
+  width: 50px;
+  height: 50px;
 }
 
 .add-text {
   display: block;
-  font-size: 20px;
+  font-size: 20px,15px;
   font-weight: bold;
   text-transform: capitalize;
   color: rgb(1, 138, 250);
@@ -53,7 +58,8 @@ body {
   background-color: #ffffff;
   align-items: center;
 /*  border: 0px solid blue;*/
-    box-shadow: #e9e9e9;
+    box-shadow: gray;
+    border-radius: 10%;
 }
 
 .form {
@@ -61,6 +67,9 @@ body {
   border: 1px solid rgb(192, 192, 209);
   opacity: 1;
   background-color: #ffffff;
+  max-width: 450;
+  box-shadow: grey;
+  border-radius: 50px;
 }
 
 
@@ -162,3 +171,16 @@ error-output {
   font-style: italic;
   color: red;
 }
+@media (max-width:584){
+  select{
+      max-width: 50%;
+
+  }
+  form {
+     
+     width: 100%;
+ }
+ 
+}
+
+
