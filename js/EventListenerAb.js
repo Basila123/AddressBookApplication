@@ -1,5 +1,3 @@
-
-  
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -61,3 +59,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 })
+
+const save = () => {
+    try {
+        createAddressBook();
+    }catch (e) {
+        return;
+    }
+}
+
+const createAddressBook = () => {
+    let addressBook = new AddressBookData();
+    addressBook.name = document.querySelector('#name').value;
+    addressBook.address = document.querySelector('#address').value;
+    addressBook.city = document.querySelector('#city').value;
+    addressBook.state = document.querySelector('#state').value;
+    addressBook.zipcode = document.querySelector('#zipcode').value;
+    addressBook.phoneNumber = document.querySelector('#phone').value;
+    alert(addressBook.toString());
+    return addressBook;
+}
+
