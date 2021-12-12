@@ -1,3 +1,5 @@
+
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/AddressBookForm.css">
-    
-
+    <script src="../js/AddressBookData.js"></script>
+    <script src="../js/EventListenerAb.js"></script>
     <title>Address Book App</title>
 </head>
 <body>
@@ -20,18 +22,20 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">
                 <div class="form-heading">PERSON ADDRESS FORM</div>
                 <div class="cancel-button">
-                    <img src="../assets/download_close.jpeg" alt="cancel">
+                    <a href="../pages/homepage.html"><img src="../assets/download_close.jpeg" alt="cancel"></a>
                 </div>
             </div>
             <div class="row-content">
                 <input class="input" type="text" id="name" name="name" placeholder="Full Name" required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
-                <textarea id="Address" class="input" name="Address" placeholder="Address" style="height: 100px;"></textarea>
+                <textarea id="address" class="input" name="address" placeholder="Address" style="height: 100px;"></textarea>
+                <error-output class="address-output" for="text"></error-output>
             </div>
             <div class="row-content">
                 <select id="city" name="city">
@@ -41,11 +45,11 @@
                     <option value="3">Banglore</option>
                     <option value="4">Delhi</option>
                     <option value="5">Kochi</option>
-                    <option value="6">Kolkata</option>
+                    <option value="6">Vijayawada</option>
+                    <option value="7">Kolkata</option>
                 </select>
                 <select id="state" name="state">
                     <option value="0">Select State</option>
-                    <option value="AP">Andhra Pradesh</option>
                     <option value="MH">Maharastra</option>
                     <option value="KN">Karnataka</option>
                     <option value="ND">New Delhi</option>
@@ -53,9 +57,11 @@
                     <option value="WB">West Bengal</option>
                 </select>
                 <input class="zip-text" id="zipcode" name="zipcode" type="text" placeholder="Zip Code">
+                <error-output class="zip-error" for="text"></error-output>
             </div>
             <div class="row-content">
-                <input id="Phone number" class="input" name="Phone Number" placeholder="Phone Number"></input>
+                <input id="phone" type="text" class="input" name="phone" placeholder="Phone Number"></input>
+                <error-output class="number-error" for="text"></error-output>
             </div>
             <div class="buttonParent">
                 <div class="add-reset">
