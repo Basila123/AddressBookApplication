@@ -1,69 +1,65 @@
-class AddressBookData {
-
-    get name() { 
-        return this._name; 
+class AddressbookData{
+ 
+    get name() {
+      return this._name;
     }
-    set name(name){ 
-        let nameRegex = RegExp('^([A-Z]{1}[a-z]{2,}[ ]{0,1})+$');
-        if(nameRegex.test(name)) 
-            this._name = name;
-        else throw "Name is Incorrect";
-    }
+    set name(name) {
+      let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+      if (nameRegex.test(name)){
+        this._name = name;
+        console.log("data entered");}
 
+      else throw "Name is Incorrect";
+    }
+  
     get address() {
-        return this._address;
+      return this._address;
     }
-    set address(address){
-        let addressRegex = RegExp('^([A-Za-z0-9/.,-]{3,}.)+$')
-        if(addressRegex.test(address))
-            this._address = address;
-        else throw "Invalid Address"
-    }
+    set address(address) {
+      let addressRegex = RegExp('^([A-Za-z0-9/.,-]{3,}.)+$');
+      if (addressRegex.test(address)){
+        this._address = address;
+        console.log("It works");}
 
-    get phoneNumber() {
-        return this._phoneNumber;
+      else throw "Address is Incorrect";
     }
-    set phoneNumber(phoneNumber){
-        let phoneRegex = RegExp('^([+0-9]{3}.{1}[0-9]{6,11})$')
-        if(phoneRegex.test(phoneNumber)) 
-            this._phoneNumber = phoneNumber;
-        else throw "Invalid Phone Number"
-    }
-
+  
     get city() {
-        return this._city;
+      return this._city;
     }
     set city(city) {
-        this._city = city;
+      this._city = city;
     }
-
+  
     get state() {
-        return this._state;
+      return this._state;
     }
     set state(state) {
-        this._state = state;
+      this._state = state;
     }
-
-    get id() {
-        return this._id;
-    }
-    set id(id){
-        if(id>0) this._id = id;
-        else throw "ID is not valid"
-    }
-
+  
     get zipcode() {
-        return this._zipcode;
+      return this._zipcode;
     }
-    set zipcode(zipcode){
-        let zipRegex = RegExp('^[0-9]{6}')
-        if(zipRegex.test(zipcode))
-            this._zipcode = zipcode;
-        else throw "Invalid Zip Code"
+    set zipcode(zipcode) {
+      let zipRegex = RegExp('^[1-9]{1}[0-9]{5}$');
+      if (zipRegex.test(zipcode)){
+        this._zipcode = zipcode;
+        console.log("zip works");}
+      else throw "zipcode is Incorrect";
     }
-    //to string method
-    toString(){
-        return "id : "+this.id+", Name : "+this.name+", Address : "+this.address+", Phone : "+this.phoneNumber+
-        ", State : "+this.state+", City : "+this.city+", ZipCode : "+this.zipcode;
+  
+    get phone() {
+      return this._phone;
     }
-}
+    set phone(phone) {
+      let phoneRegex = RegExp('^([+]{1})?([91]{2})?([1-9]{1}[0-9]{9})$');
+      if (phoneRegex.test(phone)){
+        this._phone = phone;
+        console.log("It works");}
+      else throw "Phone is Incorrect";
+    }
+    
+
+  }
+  addressbookData=new AddressbookData("Basila Noushad", "WEELS", "Kottayam", "Kerala", "123456", +9112345909);
