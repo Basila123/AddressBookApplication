@@ -62,7 +62,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 const save = () => {
     try {
-        createAddressBook();
+        let addressBookData = createAddressBook();
+        createAndUpdateStorage(addressBookData);
     }catch (e) {
         return;
     }
@@ -80,3 +81,14 @@ const createAddressBook = () => {
     return addressBook;
 }
 
+const createAndUpdateStorage = (addressBookData) => {
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+
+    if(addressBookList != undefined) {
+        addressBookList.push(addressBookData);
+    }else {
+        addressBookList = [addressBookData];
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
+}
